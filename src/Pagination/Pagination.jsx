@@ -12,7 +12,6 @@ export function Pagination({
   const arrIndex = [];
   const totalPages = Math.ceil(data.length / pageSize);
   const handleOnChange = (pageNo) => {
-    console.log({ pageNo });
     if (pageNo <= totalPages) {
       onChange(data.slice((pageNo - 1) * pageSize, pageNo * pageSize));
       setCurrentPage(pageNo);
@@ -30,9 +29,10 @@ export function Pagination({
     setCurrentPage(currentPage + 1);
     setCurrentNOPage(currentNoPage + 5);
   };
+  
   useEffect(() => {
-    onChange(data.slice(0, 5));
-  }, [data, onChange]);
+      onChange(data.slice(0, 5));
+  }, [data]);
 
   return (
     <div className="pagination-container">

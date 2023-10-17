@@ -23,7 +23,6 @@ export function Table() {
     return items.map((item) => {
       return {
         cells: columnNames.map((columnName) => {
-          console.log();
           return {
             cellValue: item[columnName],
             elementType: columnTypes[columnName],
@@ -238,7 +237,6 @@ function TextAreaComponent(props) {
   );
 }
 function CreateModalComponent(props) {
-  console.log({ props });
   const { setModalOpen} = props;
   return createPortal(
     <div className="modal-div">
