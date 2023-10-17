@@ -145,7 +145,7 @@ export function Table() {
         data={body}
         pageSize={pageSize}
         pageOptions={pageOptions}
-        onChange={(data) => setRowPageData(data)}
+        onChange={(newArr) => setRowPageData(newArr)}
       />
     </>
   );
