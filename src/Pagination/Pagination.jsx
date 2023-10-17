@@ -30,7 +30,7 @@ export function Pagination({ data = [], pageSize = 5, onChange = () => { }, page
     };
     useEffect(() => {
       onChange(data.slice(0, 5));
-    }, [data]);
+    }, []);
     
     return (
       <div className="pagination-container">
