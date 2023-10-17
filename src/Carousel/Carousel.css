@@ -1,0 +1,120 @@
+.carousel-conatiner {
+  width: 500px;
+  height: 400px;
+  border: 1px solid grey;
+  margin:0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-image {
+  width: 500px;
+  height: 400px;
+}
+.image-container {
+  overflow: hidden;
+  display: flex;
+}
+
+.carousel-arrow-left {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(12, 11, 11);
+  background-color: rgba(40, 38, 40, 0.639);
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  transform: translate(-0%, -50%);
+  cursor: pointer;
+}
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover,.carousel-cross:hover{
+  background-color: rgb(0, 0, 0);
+  > .carousel-arrow-button {
+    color: #fff;
+  }
+}
+.carousel-arrow-button {
+  padding: 0;
+  background-color: transparent;
+  font-size: 50px;
+  font-weight: 500;
+  color: #e6e0e09b;
+  cursor: pointer;
+}
+.carousel-arrow-right {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(12, 11, 11);
+  background-color: rgba(40, 38, 40, 0.639);
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  right: 0;
+  transform: translate(-0%, -50%);
+}
+
+.carousel-cross {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(12, 11, 11);
+  background-color: rgba(40, 38, 40, 0.639);
+  border-radius: 50%;
+  color: #fff;
+  top: 0;
+  right: 0;
+}
+.carousel-cross-button{
+  padding: 0;
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+.carousel-save{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}
+
+.carousel-save-button{
+  padding: 10px;
+  background-color:transparent;
+  font-size: 20px;
+  color: rgb(132, 123, 123);
+  font-weight: 600;
+}
+.carousel-save:hover{
+    background-color: black;
+    >button{
+        color: white;
+        font-size: 32px;
+    }
+    border-radius: 50%;
+}
+
+.carousel.circle-conatiner{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

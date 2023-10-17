@@ -1,0 +1,20 @@
+.drag-n-drop-conatiner{
+    border: 2px dashed #fff;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.drag-input-active-conatiner{
+    border-color: blue;
+}
+.darg-drop-input{
+    display: none;
+}
+.drag-drop-label{
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+    color: #f1f0f0;
+    font-size: 20px;
+    font-weight: 600;
+}
