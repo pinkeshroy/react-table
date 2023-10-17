@@ -53,12 +53,11 @@ export function Table() {
 
   useEffect(() => {
     setDataInState(apiData);
+    // eslint-disable-next-line
   }, []);
 
   const addColumnPrompt = () => setModalOpen(true);
   const handleAddColumn = (columnName, elemType) => {
-    console.log({ elemType });
-    // const columnName = prompt('Add column Name');
     const newHeader = [...headers, { name: columnName, elementType: elemType }];
     //  adding cells for columns
     setBody(
@@ -138,6 +137,7 @@ export function Table() {
                   setFileUploadModal={setFileUploadModal}
                 />
               );
+            return <></>
           })}
         </tbody>
       </table>
@@ -181,7 +181,7 @@ function CreateThElement(props) {
   );
 }
 function RowComponent(props) {
-  const { rowData, idx, setBody, headers ,setFileUploadModal } = props;
+  const { rowData, idx, setBody,setFileUploadModal } = props;
   const { rowName, cells } = rowData;
   const typeMap = {
     input: InputComponent,
@@ -239,7 +239,7 @@ function TextAreaComponent(props) {
 }
 function CreateModalComponent(props) {
   console.log({ props });
-  const { setAddColumnform, setModalOpen, submitForm } = props;
+  const { setModalOpen} = props;
   return createPortal(
     <div className="modal-div">
       <div className="close-btn">
@@ -252,48 +252,7 @@ function CreateModalComponent(props) {
     document.body
   );
 }
-function FormComponent(props) {
-  const { setAddColumnform, submitForm } = props;
-  return (
-    <form>
-      <div className="inputName-Btn">
-        <input
-          onChange={(e) =>
-            setAddColumnform((addColumnForm) => ({
-              ...addColumnForm,
-              name: e.target.value,
-            }))
-          }
-        />
-      </div>
-      <select
-        onChange={(e) => {
-          console.log({ elementType: e.target.value });
-          setAddColumnform((addColumnForm) => ({
-            ...addColumnForm,
-            elementType: e.target.value,
-          }));
-        }}
-        className="cellType"
-      >
-        <option>Select</option>
-        <option value="input">Input Type</option>
-        <option value="textarea">TextArea Type</option>
-      </select>
-      <div className="saveClearBtn">
-        <button type="submit" onClick={submitForm}>
-          Save
-        </button>
-        <button
-          type="reset"
-          onClick={() => setAddColumnform({ name: "", elementType: "" })}
-        >
-          Clear
-        </button>
-      </div>
-    </form>
-  );
-}
+
 function FileUploadModal({ setFileUploadModal }) {
   return (
     <>

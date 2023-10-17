@@ -28,7 +28,7 @@ export function Carousel({ imageList = [], onDelete, onSave }) {
     <div className="carousel-conatiner">
       <div ref={carouselRef} className="image-container">
         {imageList.map((image, index) => {
-          return <img className="carousel-image" src={image.url} key={index} />;
+          return <img className="carousel-image" src={image.url} key={index} alt="loading..." />;
         })}
       </div>
       {page !== imageList.length - 1 && imageList.length>1 && (
