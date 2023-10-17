@@ -17,5 +17,5 @@ export async function uploadCloudinary(fileData) {
     }
   );
 
-  const data = await response.json();
+   await response.json();
 }
