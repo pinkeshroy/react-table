@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { FileUpload } from "../FileUpload/FileUpload";
 import { Pagination } from "../Pagination/Pagination"
+import './table.css'
 export function Table() {
   const [headers, setHeaders] = useState([]);
   const [body, setBody] = useState([]);
@@ -16,8 +17,6 @@ export function Table() {
   const [rowPageData, setRowPageData] = useState([])
    const pageSize = 5;
    const pageOptions = 5;
-
-  console.log({ headers, body });
 
   function getRows(items, columnTypes) {
     const columnNames = Object.keys(columnTypes);
@@ -249,10 +248,6 @@ function CreateModalComponent(props) {
         </button>
       </div>
       <FileUpload />
-      {/* <FormComponent
-        setAddColumnform={setAddColumnform}
-        submitForm={submitForm}
-      /> */}
     </div>,
     document.body
   );
@@ -304,7 +299,6 @@ function FileUploadModal({ setFileUploadModal }) {
     <>
       {(
         <CreateModalComponent setModalOpen={setFileUploadModal}>
-          
         </CreateModalComponent>
       )}
     </>
